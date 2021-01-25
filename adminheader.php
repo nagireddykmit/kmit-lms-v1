@@ -317,6 +317,7 @@
               <li ><a href="adddepartment.php">ADD DEPARTMENT</a></li>
               <li ><a href="managedepartments.php">MANAGE DEPARTMENT </a> </li>
 			 <li ><a href="adminmanageemployee.php">MANAGE EMPLOYEE </a> </li>
+			 <li ><a href="addemployee.php">ADD EMPLOYEE </a> </li>
             </ul>
           </li>
 		 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">LEAVE TYPE

@@ -59,7 +59,7 @@ if($lastInsertId)
 //$msg="Employee record added Successfully";
 echo '<script type="text/javascript">'; 
 echo 'alert("Employee record added Successfully");'; 
-echo 'window.location.href ="index.php";';
+echo 'window.location.href ="changepassword.php";';
 echo '</script>';
 
 }
