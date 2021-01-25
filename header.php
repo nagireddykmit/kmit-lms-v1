@@ -274,7 +274,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="changepassword.php">HOME</a></li>
+        <li><a href="index.php">HOME</a></li>
       </ul>
     </div>
   </div>
