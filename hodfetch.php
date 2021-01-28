@@ -12,14 +12,13 @@ if(isset($_POST["query"]))
  $search = mysqli_real_escape_string($connect, $_POST["query"]);
  $query = "
   SELECT * FROM tblemployees 
-  WHERE EmpId LIKE '%".$search."%'
+  WHERE status=1 AND( EmpId LIKE '%".$search."%'
   OR FirstName LIKE '%".$search."%'
   OR Department LIKE '%".$search."%'
   OR LastName LIKE '%".$search."%' 
   OR EmailId LIKE '%".$search."%' 
   OR Phonenumber LIKE '%".$search."%'
-  OR Designation LIKE '%".$search."%'
- 
+  OR Designation LIKE '%".$search."%')
   
  ";
  $result = mysqli_query($connect, $query);
@@ -29,11 +28,11 @@ else
 	if(isset($_SESSION['dept']))
 	{
 		$dept=$_SESSION['dept'];
-		$query1 = "SELECT * FROM tblemployees where department=".$dept." ORDER BY EmpId ";
+		$query1 = "SELECT * FROM tblemployees where status=1 AND department=".$dept." ORDER BY EmpId ";
 		$result = mysqli_query($connect, $query1);
 	}
 	else{
-		$query1 = "SELECT * FROM tblemployees ORDER BY EmpId ";
+		$query1 = "SELECT * FROM tblemployees where status=1 ORDER BY EmpId ";
 		$result = mysqli_query($connect, $query1);
 	}
 }
