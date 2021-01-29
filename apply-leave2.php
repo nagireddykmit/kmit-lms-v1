@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-date_default_timezone_set('Asia/Kolkata');
 if(strlen($_SESSION['emplogin'])==0)
 {   
 header('location:index.php');
@@ -230,10 +229,10 @@ echo '</script>';
 			<br>
 		<div id="dates" style="display:block">
 			<label for="fromdate">From  Date:</label>
-			<input class="form-control" type="date" name="fromdate" id="fromdate" title="Choose your desired date" min="<?php echo date('Y-m-d');?>"/>
+			<input class="form-control" type="date" name="fromdate" id="fromdate" title="Choose your desired date"/>
 		<br>
 		<label for="todate">To Date</label>
-		<input class="form-control" id="todate" name="todate" type="date" min="<?php echo date('Y-m-d');?>" >
+		<input class="form-control" id="todate" name="todate" type="date">
 		</div>
 		<br> 
 		<input id="textarea1" placeholder="Enter Reason" class="form-control" name="Reason" class="materialize-textarea" length="1000" required>
