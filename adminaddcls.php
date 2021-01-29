@@ -18,20 +18,17 @@ if (mysqli_query($connect, $sql1))
   echo "New record created successfully";
 	}
 	
-	$sql='select * from '.$mnth.' where empid='.$epid;
-	$result = mysqli_query($connect, $sql);
+	//$sql='select * from '.$mnth.' where empid='.$epid;
+	//$result = mysqli_query($connect, $sql);
 	
 	$row=mysqli_fetch_assoc($result);
 	$sql2 = "none";
 	
-		if($row['cl'] < 0){
-			$sql="update ".$mnth." set cl=0, cl=cl+".$leaves." where empid=".$epid;
-			$sql2 = "update tblavailable set cl=0, cl=cl+".$leaves." where empid=".$epid;
-		}
-		else{
-			$sql="update ".$mnth." set cl=cl+".$leaves." where empid=".$epid;
+		
+		
+			$sql="update ".$mnth." set cl=cl+".$leaves.",avail=avail-".$leaves." where empid=".$epid;
 			$sql2 = "update tblavailable set cl=cl+".$leaves." where empid=".$epid;
-		}
+		
 	mysqli_query($connect,$sql);
 	mysqli_query($connect,$sql2);
 	

@@ -24,7 +24,7 @@ if (mysqli_query($connect, $sql1))
 	$row=mysqli_fetch_assoc($result);
 	$sql2 = "none";
 	
-		if($row['cl'] < 0){
+		/*if($row['cl'] < 0){
 			//cl=1, leaves=1 
 			if($row['cl']+$leaves>=0)
 			{
@@ -41,6 +41,22 @@ if (mysqli_query($connect, $sql1))
 		else{
 			
 			$sql1="update ".$mnth." set ccl=ccl+".$leaves." where empid=".$epid;
+			$sql2 = "update tblavailable set ccl=ccl+".$leaves." where empid=".$epid;
+		}*/
+		if($row['cl'] < 0){
+			if(($row['cl']+$leaves)>=0)
+			{
+			$sql1="update ".$mnth." set cl=0, ccl=cl+".$leaves." , iccl=iccl+".$leaves." where empid=".$epid;
+			$sql2 = "update tblavailable set cl=0, ccl=cl+".$leaves." where empid=".$epid;
+			}
+			else
+			{
+			$sql1="update ".$mnth." set cl=cl+".$leaves." , iccl=iccl+".$leaves." where empid=".$epid;
+			$sql2 = "update tblavailable set cl=cl+".$leaves." where empid=".$epid;
+			}
+		}
+		else{
+			$sql1="update ".$mnth." set ccl=ccl+".$leaves.", iccl=iccl+".$leaves." where empid=".$epid;
 			$sql2 = "update tblavailable set ccl=ccl+".$leaves." where empid=".$epid;
 		}
 	echo "Query-1 :".$sql1;
