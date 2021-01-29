@@ -64,7 +64,6 @@ $("welcome").show();
                 <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 <input type="submit" name="signin" value="Sign in" class="btn btn-lg btn-primary btn-block btn-signin">
             </form><!-- /form -->
-			<a href="addemployee.php" class="forgot-password"> New Employee ??</a>&nbsp;
 			<a href="forgot-password.php" class="forgot-password"> Forgot Password</a>
         </div><!-- /card-container -->
     </div>

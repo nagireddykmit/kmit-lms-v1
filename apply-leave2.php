@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+date_default_timezone_set('Asia/Kolkata');
 if(strlen($_SESSION['emplogin'])==0)
 {   
 header('location:index.php');

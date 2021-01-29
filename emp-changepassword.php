@@ -124,7 +124,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               ?>  
                    <h2> <p class="look"  align="center" style="font-family:Georgia;color:#2F4F4F;"><b>Welcome to <b><?php echo htmlentities($result->FirstName." ".$result->LastName);?></p></h2>
-                        <p class="look"  align="center" style="font-family:Georgia;color:#2F4F4F;"><b> You are Employee ID is <?php echo htmlentities($result->EmpId)?></p>
+                        <p class="look"  align="center" style="font-family:Georgia;color:#2F4F4F;"><b> Your Employee ID is <?php echo htmlentities($result->EmpId)?></p>
                          <?php $_SESSION['empid']=$result->EmpId; }} ?>
       
   <!-- #hero -->

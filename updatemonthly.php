@@ -72,7 +72,7 @@
 				$rows=mysqli_num_rows($result);
 				if($rows) {
 					while($row = $result->fetch_assoc()){
-						$sql1="UPDATE ".$curname." SET cl=".$row['cl'].", ccl=".$row['ccl'].", od=0, al=".$row['al'].", icl=".$row['cl'].", iccl= ".$row['ccl']." where empid=".$row['empid'];
+						$sql1="UPDATE ".$curname." SET cl=".$row['q1'].", ccl=".$row['ccl'].", od=0, al=".$row['al'].", icl=".$row['q1'].", iccl= ".$row['ccl']." where empid=".$row['empid'];
 						$result1 = mysqli_query($connect, $sql1);
 					}
 				}

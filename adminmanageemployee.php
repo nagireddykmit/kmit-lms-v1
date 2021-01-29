@@ -152,6 +152,14 @@ header('location:adminmanageemployee.php');
     color: #FF0000;
 }
 </style>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+</script>
 <!-- Footer -->
 		<?php
 		require_once('footer.php');
