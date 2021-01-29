@@ -1,7 +1,7 @@
-<?php
+	<?php
 	session_start();
 	include('includes/config1.php');
-
+	date_default_timezone_set('Asia/Kolkata');
 /*	$connect = mysqli_connect('localhost:3306', 'admin', 'kmit@3306','finalelms');
 	if (!$connect)
 	{
