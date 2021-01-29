@@ -101,7 +101,7 @@ $(document).ready(function(){
 			</select><br>
 			<input placeholder="Select Date" id="mask1" class="form-control" name="date" class="masked" type="date" data-inputmask="'alias': 'date'" required>
 			 <br>
-			<input placeholder="Number of CLs" class="form-control" type="number" name="leavecount">
+			<input placeholder="Number of CLs" class="form-control" type="number" name="leavecount" min=0>
 			<br>
 			<input type="submit" name="addleaves" class="waves-effect waves-light btn indigo m-b-xs" value="ADD">
 			<input type="reset" name="" class="waves-effect waves-light btn indigo m-b-xs" value="RESET">

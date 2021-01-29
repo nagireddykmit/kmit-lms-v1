@@ -25,11 +25,11 @@ if (mysqli_query($connect, $sql1))
 	$sql2 = "none";
 	
 		if($row['cl'] < 0){
-			$sql="update ".$mnth." set cl=0, cl=cl+".$leaves." , icl=icl+".$leaves." where empid=".$epid;
+			$sql="update ".$mnth." set cl=0, cl=cl+".$leaves." where empid=".$epid;
 			$sql2 = "update tblavailable set cl=0, cl=cl+".$leaves." where empid=".$epid;
 		}
 		else{
-			$sql="update ".$mnth." set cl=cl+".$leaves.", icl=icl+".$leaves." where empid=".$epid;
+			$sql="update ".$mnth." set cl=cl+".$leaves." where empid=".$epid;
 			$sql2 = "update tblavailable set cl=cl+".$leaves." where empid=".$epid;
 		}
 	mysqli_query($connect,$sql);
