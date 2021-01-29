@@ -18,7 +18,7 @@ $sql = "update tblleaves set AdminRemark='".$description."', AdminRemarkDate='".
 echo $sql;
 $success=mysqli_query($connect, $sql);
  
-if($success)
+if($success && $status==1)
 {
 	$_SESSION['lid']=$did;
 	echo "successful";
