@@ -296,7 +296,8 @@
               <li><a href="viewlates.php">VIEW LATES HISTORY</a></li>
 			   <li><a href="viewlop.php">VIEW LOP HISTORY</a></li>
 			   <li><a href="viewholidays.php">VIEW HOLIDAYS</a></li>
-               <li><a href="daywiseleavehistory.php">VIEW  DAY-WISE LEAVES</a></li>
+              <!-- <li><a href="daywiseleavehistory.php">VIEW  DAY-WISE APPROVED LEAVES</a></li>-->
+			    <li><a href="daywiseleavependinghistory.php">VIEW  DAY-WISE  PENDING LEAVES</a></li>
             </ul>
           </li>
 		  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ADD LEAVES
@@ -331,7 +332,7 @@
 		<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="monthlyreport.php?month=January">MONTHLY STATEMENT</a></li>
-              <li><a href="empreport.php">EMPLOYEE INFORMATION  </a></li>    
+              <li><a href="empreport.php">EMPLOYEE INFORMATION</a></li>    
             </ul>
           </li>
 		  <li ><a href="logout.php">SIGN OUT</a></li>
