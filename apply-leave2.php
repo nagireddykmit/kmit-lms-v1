@@ -13,12 +13,16 @@ $empid=$_SESSION['empid'];
 $eid=$_SESSION['eid'];
 $emname=$_SESSION['emname'];
 $leavetype=$_POST['leavetype'];
-$fromdate=date('Y-m-d');
-$todate=date('Y-m-d');
+
 if(!((strcmp($leavetype,"FN")==0) or (strcmp($leavetype,"AN")==0)))
 {
 	$fromdate=$_POST['fromdate'];  
 	$todate=$_POST['todate'];
+}
+else{
+date_default_timezone_set('Asia/Kolkata');
+$fromdate=date('Y-m-d');
+$todate=date('Y-m-d');
 }
 //$noofdays=$_POST['noofdays'];
 $description=$_POST['gender']; 
@@ -26,9 +30,24 @@ $Reason=$_POST['Reason'];
 //$odupload=$_POST['odupload'];  
 $status=0;
 $isread=0;
+
 if($fromdate > $todate){
 	echo '<script>';
     echo 'alert(" ToDate should be greater than FromDate ");';
+	echo '</script>';
+}
+else{
+$sql1="SELECT * from tblleaves t, tblemployees e where t.status in (0,1) and :fromdate BETWEEN t.FromDate and t.ToDate and t.empid=e.id and e.EmpId=:empid";
+$query1 = $dbh->prepare($sql1);
+$query1->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
+$query1->bindParam(':empid',$empid,PDO::PARAM_STR);
+$query1->execute();
+$number_of_rows = $query1->fetchAll(); 
+if($number_of_rows)
+{
+	echo '<script type="text/javascript">'; 
+	echo 'alert("You have already applied a leave on '.$fromdate.'. Please check in History");'; 
+	echo 'window.location.href = "emp-changepassword.php";';
 	echo '</script>';
 }
 else{
@@ -99,7 +118,7 @@ echo 'window.location.href = "emp-changepassword.php";';
 echo '</script>';
 //$error="Something went wrong. Please try again";
 }
-
+}
 }
 }
 
@@ -229,10 +248,10 @@ echo '</script>';
 			<br>
 		<div id="dates" style="display:block">
 			<label for="fromdate">From  Date:</label>
-			<input class="form-control" type="date" name="fromdate" id="fromdate" title="Choose your desired date"/>
+			<input class="form-control" type="date" name="fromdate" id="fromdate" title="Choose your desired date" min="<?php echo date('Y-m-d');?>"/>
 		<br>
 		<label for="todate">To Date</label>
-		<input class="form-control" id="todate" name="todate" type="date">
+		<input class="form-control" id="todate" name="todate" type="date" min="<?php echo date('Y-m-d');?>">
 		</div>
 		<br> 
 		<input id="textarea1" placeholder="Enter Reason" class="form-control" name="Reason" class="materialize-textarea" length="1000" required>

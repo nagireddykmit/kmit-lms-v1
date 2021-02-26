@@ -296,7 +296,7 @@
               <li><a href="viewlates.php">VIEW LATES HISTORY</a></li>
 			   <li><a href="viewlop.php">VIEW LOP HISTORY</a></li>
 			   <li><a href="viewholidays.php">VIEW HOLIDAYS</a></li>
-              <!-- <li><a href="daywiseleavehistory.php">VIEW  DAY-WISE APPROVED LEAVES</a></li>-->
+               <li><a href="daywiseleavehistory.php">VIEW  DAY-WISE  EMPLOYEES ON LEAVE</a></li>
 			    <li><a href="daywiseleavependinghistory.php">VIEW  DAY-WISE  PENDING LEAVES</a></li>
             </ul>
           </li>

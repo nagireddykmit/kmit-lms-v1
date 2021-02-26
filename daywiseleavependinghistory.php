@@ -65,6 +65,7 @@ include('includes/config.php');
 		<?php if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
 		<?php 
 			$selectdate=$_SESSION['selectdate'];
+			date_default_timezone_set('Asia/Kolkata');
 			if($selectdate==NULL)
 				$selectdate=date("Y-m-d");
 			echo '<center><b style="font-family:Georgia;color:#2F4F4F;font-size:25px"> Employees on leave on  '.$selectdate.' </b></center>';
@@ -85,7 +86,7 @@ include('includes/config.php');
 			
 			<?php 
 			$statusArr=["Pending","Approved"];
-			$sql = "SELECT e.EmpId as emp, FirstName,LastName, e.Department as dep, t.Description as td, l.fromdate as tf, l.todate as tt,l.status as ts from tblemployees e, tblleavetype t, tblleaves l WHERE e.id=l.empid and t.LeaveType=l.LeaveType and l.Status in (0,1) and FromDate='".$selectdate."' order by l.status, e.Department";
+			$sql = "SELECT e.EmpId as emp, FirstName,LastName, e.Department as dep, t.Description as td, l.fromdate as tf, l.todate as tt,l.status as ts from tblemployees e, tblleavetype t, tblleaves l WHERE e.id=l.empid and t.LeaveType=l.LeaveType and l.Status in (0,1) and FromDate='".$selectdate."' order by l.status desc, e.Department";
 			$query = $dbh -> prepare($sql);
 			$query->bindParam(':eid',$eid,PDO::PARAM_STR);
 			$query->execute();
